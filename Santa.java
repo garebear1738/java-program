@@ -5,7 +5,7 @@ import java.text.*;
 public class Santa {
 	
 	static String iFirstName, iLastName, iToy1, iToy2, iPrice1, iPrice2;
-	static double cPrice1, cPrice2, cSubTotal, cSaleTax, cTotalbill;
+	static double cPrice1, cPrice2, cSubTotal, cSaleTax, cTotalbill,cDiscount;
 		
 	static Scanner scanner;
 	static Date today;
@@ -57,6 +57,8 @@ public class Santa {
 		cPrice1 = Double.parseDouble(iPrice1);
 		cPrice2 = Double.parseDouble(iPrice2);
 		cSubTotal = cPrice1 + cPrice2;
+		cDiscount = cSubTotal * .2;
+		cSubTotal = cSubTotal - cDiscount;
 		cSaleTax = cSubTotal * .07;
 		cTotalbill = cSaleTax + cSubTotal;
 		
@@ -80,6 +82,8 @@ public class Santa {
 		System.out.println("Price of toy 2: " + df1.format(cPrice2));
 		System.out.println(" ");
 		System.out.println("Subtotal: " + df1.format(cSubTotal));
+		System.out.println(" ");
+		System.out.println("Discount is: " + cDiscount);
 		System.out.println(" ");
 		System.out.println("Sale tax: " + df1.format(cSaleTax));
 		System.out.println(" ");
